@@ -3,225 +3,414 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mustapha Dababi - Technicien Biomédical Expert</title>
+    <title>Mustapha Dababi - Support Technique Hématologie</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Particles Background -->
-    <div class="particles" id="particles"></div>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="dna-helix">
+                <div class="strand"></div>
+                <div class="strand"></div>
+                <div class="strand"></div>
+                <div class="strand"></div>
+                <div class="strand"></div>
+            </div>
+            <p class="preloader-text">CHARGEMENT</p>
+        </div>
+    </div>
 
-    <!-- Cursor Trail -->
-    <div class="cursor-trail" id="cursorTrail"></div>
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursorFollower"></div>
+
+    <!-- Floating Particles -->
+    <canvas id="particleCanvas"></canvas>
 
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="logo">
-            <span class="logo-icon">⚕️</span>
-            <span class="logo-text">M<span class="logo-highlight">D</span></span>
-        </div>
-        <ul class="nav-links">
-            <li><a href="#accueil" class="nav-link">Accueil</a></li>
-            <li><a href="#apropos" class="nav-link">Profil</a></li>
-            <li><a href="#expertise" class="nav-link">Expertise</a></li>
-            <li><a href="#automates" class="nav-link">Automates</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-        <div class="menu-toggle" id="menuToggle">
-            <span></span>
-            <span></span>
-            <span></span>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#accueil" class="logo">
+                <div class="logo-icon">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <rect width="32" height="32" rx="8" fill="url(#logoGrad)"/>
+                        <path d="M8 16L16 8L24 16L16 24L8 16Z" fill="white" opacity="0.9"/>
+                        <circle cx="16" cy="16" r="4" fill="url(#logoGrad)"/>
+                        <defs>
+                            <linearGradient id="logoGrad" x1="0" y1="0" x2="32" y2="32">
+                                <stop stop-color="#1e40af"/>
+                                <stop offset="1" stop-color="#7c3aed"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <span class="logo-text">Mustapha<span class="logo-dot">.</span></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#accueil" class="nav-link active" data-text="Accueil">Accueil</a></li>
+                <li><a href="#apropos" class="nav-link" data-text="Profil">Profil</a></li>
+                <li><a href="#expertise" class="nav-link" data-text="Expertise">Expertise</a></li>
+                <li><a href="#automates" class="nav-link" data-text="Automates">Automates</a></li>
+                <li><a href="#contact" class="nav-link" data-text="Contact">Contact</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="#contact" class="btn-magnetic">
+                    <span>Me Contacter</span>
+                </a>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
 
-    <!-- Section Accueil -->
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <a href="#accueil" class="mobile-link">Accueil</a>
+            <a href="#apropos" class="mobile-link">Profil</a>
+            <a href="#expertise" class="mobile-link">Expertise</a>
+            <a href="#automates" class="mobile-link">Automates</a>
+            <a href="#contact" class="mobile-link">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
     <section id="accueil" class="hero">
         <div class="hero-bg">
-            <div class="gradient-orb orb-1"></div>
-            <div class="gradient-orb orb-2"></div>
-            <div class="gradient-orb orb-3"></div>
-            <div class="grid-overlay"></div>
-        </div>
-        <div class="hero-logos">
-            <div class="partner-logo">
-                <span class="logo-medical">HORIBA</span>
-                <span class="logo-medical-sub">Medical</span>
-            </div>
-            <div class="partner-logo">
-                <span class="logo-bioplus">BIOPUS</span>
-                <span class="logo-bioplus-sub">DIAGNOSTICS</span>
+            <div class="gradient-bg"></div>
+            <div class="grid-pattern"></div>
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
             </div>
         </div>
-        <div class="hero-content">
-            <div class="hero-badge">
-                <span class="pulse"></span>
-                Support Technique Expert
-            </div>
-            <h1 class="hero-title">
-                <span class="line line-1">Mustapha</span>
-                <span class="line line-2">DABABI</span>
-            </h1>
-            <div class="hero-subtitle">
-                <span class="typewriter" id="typewriter"></span>
-                <span class="cursor">|</span>
-            </div>
-            <div class="hero-stats">
-                <div class="stat" data-target="200">
-                    <span class="stat-number">0</span>
-                    <span class="stat-label">Automates</span>
-                </div>
-                <div class="stat" data-target="6">
-                    <span class="stat-number">0</span>
-                    <span class="stat-label">Années Exp.</span>
-                </div>
-                <div class="stat" data-target="100">
-                    <span class="stat-number">0</span>
-                    <span class="stat-label">% Fiabilité</span>
-                </div>
-            </div>
-            <div class="hero-buttons">
-                <a href="#contact" class="btn btn-primary">
-                    <span>Contactez-moi</span>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                </a>
-                <a href="#expertise" class="btn btn-secondary">
-                    <span>Découvrir</span>
-                </a>
-            </div>
-        </div>
-        <div class="hero-image">
-            <div class="image-wrapper">
-                <div class="image-placeholder pro-photo">
-                    <span>👨‍⚕️</span>
-                    <p>Mustapha Dababi</p>
-                    <p class="photo-subtitle">Support Technique Bioplus/Horiba</p>
-                </div>
-                <div class="image-ring ring-1"></div>
-                <div class="image-ring ring-2"></div>
-                <div class="image-ring ring-3"></div>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <div class="mouse">
-                <div class="wheel"></div>
-            </div>
-            <span>Scroll</span>
-        </div>
-    </section>
 
-    <!-- Section À propos -->
-    <section id="apropos" class="about">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">01</span>
-                <h2>Profil <span class="highlight">Expert</span></h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="about-grid">
-                <div class="about-card main-card">
-                    <div class="card-glow"></div>
-                    <h3>Technicien Biomédical Expert</h3>
-                    <p class="lead">Spécialisé en automates d'hématologie HORIBA avec 6 années d'expérience dans le service après-vente d'équipements médicaux.</p>
-                    <div class="tags">
-                        <span class="tag">HORIBA</span>
-                        <span class="tag">Hématologie</span>
-                        <span class="tag">SAV</span>
-                        <span class="tag">Diagnostic</span>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge" data-reveal>
+                    <span class="badge-dot"></span>
+                    <span>Support Technique Expert • Bioplus/Horiba</span>
+                </div>
+
+                <h1 class="hero-title" data-reveal>
+                    <span class="title-line">
+                        <span class="title-word" data-reveal>Technicien</span>
+                    </span>
+                    <span class="title-line">
+                        <span class="title-word gradient-text" data-reveal>Biomédical</span>
+                    </span>
+                    <span class="title-line">
+                        <span class="title-word" data-reveal>Expert</span>
+                        <span class="title-accent" data-reveal>Hématologie</span>
+                    </span>
+                </h1>
+
+                <p class="hero-description" data-reveal>
+                    Spécialiste en automates HORIBA Medical. 6 ans d'expérience, 
+                    200+ automates suivis, diagnostic avancé et maintenance préventive.
+                </p>
+
+                <div class="hero-stats" data-reveal>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="200">0</div>
+                        <div class="stat-label">Automates</div>
+                        <div class="stat-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                                <path d="M8 21h8M12 17v4"/>
+                            </svg>
+                        </div>
                     </div>
-                </div>
-                <div class="about-card">
-                    <div class="card-icon">🎯</div>
-                    <h4>Mission</h4>
-                    <p>Assurer la performance et la fiabilité des automates d'hématologie pour un diagnostic médical précis.</p>
-                </div>
-                <div class="about-card">
-                    <div class="card-icon">⚡</div>
-                    <h4>Approche</h4>
-                    <p>Réactivité, diagnostic avancé et qualité de service au cœur de chaque intervention.</p>
-                </div>
-                <div class="about-card">
-                    <div class="card-icon">🏆</div>
-                    <h4>Résultat</h4>
-                    <p>Parc de 200+ automates opérationnels, zéro downtime critique.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Expertise -->
-    <section id="expertise" class="expertise">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">02</span>
-                <h2>Domaines d'<span class="highlight">Expertise</span></h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="expertise-grid">
-                <div class="expertise-card" data-tilt>
-                    <div class="card-bg"></div>
-                    <div class="card-content">
-                        <div class="card-icon-large">🔧</div>
-                        <h3>Maintenance</h3>
-                        <p>Maintenance préventive et corrective des automates HORIBA PXL80, PXL80, H250 et HELO.</p>
-                        <div class="card-stats">
-                            <span>200+ automates</span>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="6">0</div>
+                        <div class="stat-label">Années Exp.</div>
+                        <div class="stat-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 6v6l4 2"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="100">0</div>
+                        <div class="stat-suffix">%</div>
+                        <div class="stat-label">Fiabilité</div>
+                        <div class="stat-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <path d="M22 4L12 14.01l-3-3"/>
+                            </svg>
                         </div>
                     </div>
                 </div>
-                <div class="expertise-card" data-tilt>
+
+                <div class="hero-buttons" data-reveal>
+                    <a href="#contact" class="btn-primary">
+                        <span class="btn-text">Contactez-moi</span>
+                        <span class="btn-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </span>
+                    </a>
+                    <a href="#expertise" class="btn-secondary">
+                        <span class="btn-text">Découvrir</span>
+                    </a>
+                </div>
+
+                <div class="partner-badges" data-reveal>
+                    <div class="partner-badge">
+                        <span class="partner-name">HORIBA</span>
+                        <span class="partner-sub">Medical</span>
+                    </div>
+                    <div class="partner-badge">
+                        <span class="partner-name">BIOPUS</span>
+                        <span class="partner-sub">Diagnostics</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="visual-container" data-reveal>
+                    <div class="image-frame">
+                        <div class="frame-border"></div>
+                        <div class="image-content">
+                            <div class="photo-placeholder">
+                                <div class="photo-icon">
+                                    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                        <circle cx="12" cy="7" r="4"/>
+                                    </svg>
+                                </div>
+                                <p class="photo-label">Mustapha Dababi</p>
+                                <p class="photo-sublabel">Support Technique Bioplus/Horiba</p>
+                            </div>
+                        </div>
+                        <div class="frame-glow"></div>
+                    </div>
+
+                    <div class="floating-card card-1">
+                        <div class="card-icon">🔬</div>
+                        <div class="card-info">
+                            <span class="card-title">Yumizen H500</span>
+                            <span class="card-desc">Hématologie</span>
+                        </div>
+                    </div>
+
+                    <div class="floating-card card-2">
+                        <div class="card-icon">⚡</div>
+                        <div class="card-info">
+                            <span class="card-title">200+ Automates</span>
+                            <span class="card-desc">Sous surveillance</span>
+                        </div>
+                    </div>
+
+                    <div class="floating-card card-3">
+                        <div class="card-icon">✓</div>
+                        <div class="card-info">
+                            <span class="card-title">Disponible</span>
+                            <span class="card-desc">Maintenance</span>
+                        </div>
+                    </div>
+
+                    <div class="orbit-ring ring-1"></div>
+                    <div class="orbit-ring ring-2"></div>
+                    <div class="orbit-ring ring-3"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span class="scroll-text">Scroll</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="apropos" class="about">
+        <div class="section-container">
+            <div class="section-header" data-reveal>
+                <span class="section-number">01</span>
+                <h2 class="section-title">Profil <span class="gradient-text">Expert</span></h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-main" data-reveal>
+                    <div class="about-card main-card">
+                        <div class="card-glow"></div>
+                        <div class="card-content">
+                            <h3>Technicien Biomédical Expert</h3>
+                            <p class="lead">Spécialisé en automates d'hématologie HORIBA avec 6 années d'expérience dans le service après-vente d'équipements médicaux.</p>
+                            <div class="tags">
+                                <span class="tag">HORIBA Medical</span>
+                                <span class="tag">Hématologie</span>
+                                <span class="tag">SAV</span>
+                                <span class="tag">Diagnostic</span>
+                                <span class="tag">Bioplus Tunisie</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-cards">
+                    <div class="about-card" data-reveal>
+                        <div class="card-icon-wrapper">
+                            <div class="icon-bg"></div>
+                            <span class="icon">🎯</span>
+                        </div>
+                        <h4>Mission</h4>
+                        <p>Assurer la performance et la fiabilité des automates d'hématologie pour un diagnostic médical précis.</p>
+                    </div>
+
+                    <div class="about-card" data-reveal>
+                        <div class="card-icon-wrapper">
+                            <div class="icon-bg"></div>
+                            <span class="icon">⚡</span>
+                        </div>
+                        <h4>Approche</h4>
+                        <p>Réactivité, diagnostic avancé et qualité de service au cœur de chaque intervention.</p>
+                    </div>
+
+                    <div class="about-card" data-reveal>
+                        <div class="card-icon-wrapper">
+                            <div class="icon-bg"></div>
+                            <span class="icon">🏆</span>
+                        </div>
+                        <h4>Résultat</h4>
+                        <p>Parc de 200+ automates opérationnels, zéro downtime critique.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section id="expertise" class="expertise">
+        <div class="section-container">
+            <div class="section-header" data-reveal>
+                <span class="section-number">02</span>
+                <h2 class="section-title">Domaines d'<span class="gradient-text">Expertise</span></h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="expertise-grid">
+                <div class="expertise-card" data-reveal data-tilt>
                     <div class="card-bg"></div>
                     <div class="card-content">
-                        <div class="card-icon-large">⚙️</div>
+                        <div class="card-icon-large">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                            </svg>
+                        </div>
+                        <h3>Maintenance</h3>
+                        <p>Maintenance préventive et corrective des automates HORIBA Yumizen H500/H550, Pentra XL 80/XLR.</p>
+                        <div class="card-footer">
+                            <span class="card-stat">200+ automates</span>
+                            <div class="card-arrow">→</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expertise-card" data-reveal data-tilt>
+                    <div class="card-bg"></div>
+                    <div class="card-content">
+                        <div class="card-icon-large">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="3"/>
+                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                            </svg>
+                        </div>
                         <h3>Installation</h3>
                         <p>Installation, mise en service et configuration des équipements d'hématologie.</p>
-                        <div class="card-stats">
-                            <span>Déploiement complet</span>
+                        <div class="card-footer">
+                            <span class="card-stat">Déploiement complet</span>
+                            <div class="card-arrow">→</div>
                         </div>
                     </div>
                 </div>
-                <div class="expertise-card" data-tilt>
+
+                <div class="expertise-card" data-reveal data-tilt>
                     <div class="card-bg"></div>
                     <div class="card-content">
-                        <div class="card-icon-large">🔍</div>
+                        <div class="card-icon-large">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="11" cy="11" r="8"/>
+                                <path d="M21 21l-4.35-4.35"/>
+                            </svg>
+                        </div>
                         <h3>Diagnostic</h3>
                         <p>Analyse avancée des pannes matérielles, logicielles et réseau.</p>
-                        <div class="card-stats">
-                            <span>Résolution rapide</span>
+                        <div class="card-footer">
+                            <span class="card-stat">Résolution rapide</span>
+                            <div class="card-arrow">→</div>
                         </div>
                     </div>
                 </div>
-                <div class="expertise-card" data-tilt>
+
+                <div class="expertise-card" data-reveal data-tilt>
                     <div class="card-bg"></div>
                     <div class="card-content">
-                        <div class="card-icon-large">👥</div>
+                        <div class="card-icon-large">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
                         <h3>Management</h3>
                         <p>Management d'équipe technique et formation des utilisateurs.</p>
-                        <div class="card-stats">
-                            <span>Leadership prouvé</span>
+                        <div class="card-footer">
+                            <span class="card-stat">Leadership prouvé</span>
+                            <div class="card-arrow">→</div>
                         </div>
                     </div>
                 </div>
-                <div class="expertise-card" data-tilt>
+
+                <div class="expertise-card" data-reveal data-tilt>
                     <div class="card-bg"></div>
                     <div class="card-content">
-                        <div class="card-icon-large">🌐</div>
+                        <div class="card-icon-large">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="2" y1="12" x2="22" y2="12"/>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            </svg>
+                        </div>
                         <h3>Réseaux</h3>
                         <p>TCP/IP, VPN IPSec, routeurs Cisco et protocoles de communication.</p>
-                        <div class="card-stats">
-                            <span>Infrastructure complète</span>
+                        <div class="card-footer">
+                            <span class="card-stat">Infrastructure complète</span>
+                            <div class="card-arrow">→</div>
                         </div>
                     </div>
                 </div>
-                <div class="expertise-card" data-tilt>
+
+                <div class="expertise-card" data-reveal data-tilt>
                     <div class="card-bg"></div>
                     <div class="card-content">
-                        <div class="card-icon-large">💻</div>
+                        <div class="card-icon-large">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
+                            </svg>
+                        </div>
                         <h3>Informatique</h3>
                         <p>Windows, outils bureautiques, diagnostic réseau et connectivité.</p>
-                        <div class="card-stats">
-                            <span>Solutions IT</span>
+                        <div class="card-footer">
+                            <span class="card-stat">Solutions IT</span>
+                            <div class="card-arrow">→</div>
                         </div>
                     </div>
                 </div>
@@ -229,82 +418,101 @@
         </div>
     </section>
 
-    <!-- Section Automates -->
+    <!-- Automates Section -->
     <section id="automates" class="automates">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">03</span>
-                <h2>Automates <span class="highlight">HORIBA Medical</span></h2>
+        <div class="section-container">
+            <div class="section-header" data-reveal>
+                <span class="section-number">03</span>
+                <h2 class="section-title">Automates <span class="gradient-text">HORIBA Medical</span></h2>
                 <div class="section-line"></div>
                 <p class="section-subtitle">Performance • Fiabilité • Innovation</p>
             </div>
-            <div class="automates-showcase">
-                <div class="automate-card featured">
-                    <div class="automate-badge">NOUVEAU</div>
-                    <div class="automate-image">
-                        <div class="image-placeholder automate-placeholder">
-                            <span>🔬</span>
-                            <p class="automate-name">Yumizen 2.0</p>
-                            <p class="automate-desc">Nouvelle Génération</p>
+
+            <div class="automates-grid">
+                <div class="automate-featured" data-reveal>
+                    <div class="featured-badge">GAMME COMPLÈTE</div>
+                    <div class="featured-content">
+                        <div class="featured-visual">
+                            <div class="automate-display">
+                                <div class="display-icon">🔬</div>
+                                <div class="display-name">Yumizen H500 / H550</div>
+                                <div class="display-type">Hématologie Automatisée</div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="automate-info">
-                        <h3>Yumizen 2.0</h3>
-                        <p>Analyse hématologique automatisée de nouvelle génération. L'excellence au service de votre laboratoire.</p>
-                        <div class="automate-specs">
-                            <span>100 échantillons/heure</span>
-                            <span>Interface tactile</span>
-                            <span>Grande autonomie</span>
-                        </div>
-                        <div class="automate-features">
-                            <div class="feature">✓ Haute Performance</div>
-                            <div class="feature">✓ Précision Optimale</div>
-                            <div class="feature">✓ Fiabilité Totale</div>
-                            <div class="feature">✓ Connectivité Avancée</div>
+                        <div class="featured-info">
+                            <h3>Yumizen H500 / H550</h3>
+                            <p>Analyseurs hématologiques automatisés de nouvelle génération. Performance et fiabilité pour votre laboratoire.</p>
+                            <div class="specs-grid">
+                                <div class="spec-item">
+                                    <span class="spec-icon">📊</span>
+                                    <span class="spec-text">Analyse complète</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-icon">📱</span>
+                                    <span class="spec-text">Interface tactile</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-icon">⚡</span>
+                                    <span class="spec-text">Haute autonomie</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-icon">🔗</span>
+                                    <span class="spec-text">Connectivité LIS</span>
+                                </div>
+                            </div>
+                            <div class="features-list">
+                                <div class="feature-item">✓ Haute Performance</div>
+                                <div class="feature-item">✓ Précision Optimale</div>
+                                <div class="feature-item">✓ Fiabilité Totale</div>
+                                <div class="feature-item">✓ Connectivité Avancée</div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="automate-card">
-                    <div class="automate-image">
-                        <div class="image-placeholder automate-placeholder">
-                            <span>🔬</span>
-                            <p class="automate-name">PXL80</p>
+
+                <div class="automate-card" data-reveal>
+                    <div class="automate-visual">
+                        <div class="automate-display">
+                            <div class="display-icon">🔬</div>
+                            <div class="display-name">ABX Pentra XL 80</div>
                         </div>
                     </div>
                     <div class="automate-info">
-                        <h3>PXL80</h3>
+                        <h4>ABX Pentra XL 80</h4>
                         <p>Analyseur d'hématologie complet pour le diagnostic sanguin.</p>
                         <div class="automate-specs">
                             <span>80 échantillons/heure</span>
-                            <span>24 paramètres</span>
+                            <span>Multi-paramètres</span>
                         </div>
                     </div>
                 </div>
-                <div class="automate-card">
-                    <div class="automate-image">
-                        <div class="image-placeholder automate-placeholder">
-                            <span>🔬</span>
-                            <p class="automate-name">H250</p>
+
+                <div class="automate-card" data-reveal>
+                    <div class="automate-visual">
+                        <div class="automate-display">
+                            <div class="display-icon">🔬</div>
+                            <div class="display-name">ABX Pentra XLR</div>
                         </div>
                     </div>
                     <div class="automate-info">
-                        <h3>H250</h3>
+                        <h4>ABX Pentra XLR</h4>
                         <p>Analyseur haute performance pour laboratoires centraux.</p>
                         <div class="automate-specs">
-                            <span>250 échantillons/heure</span>
-                            <span>30 paramètres</span>
+                            <span>Haute débit</span>
+                            <span>Précision avancée</span>
                         </div>
                     </div>
                 </div>
-                <div class="automate-card">
-                    <div class="automate-image">
-                        <div class="image-placeholder automate-placeholder">
-                            <span>🔬</span>
-                            <p class="automate-name">HELO</p>
+
+                <div class="automate-card" data-reveal>
+                    <div class="automate-visual">
+                        <div class="automate-display">
+                            <div class="display-icon">🔬</div>
+                            <div class="display-name">Yumizen H2500</div>
                         </div>
                     </div>
                     <div class="automate-info">
-                        <h3>HELO</h3>
+                        <h4>Yumizen H2500-SPS</h4>
                         <p>Solution intégrée pour l'analyse hématologique avancée.</p>
                         <div class="automate-specs">
                             <span>Analyse complète</span>
@@ -312,25 +520,45 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="automate-card" data-reveal>
+                    <div class="automate-visual">
+                        <div class="automate-display">
+                            <div class="display-icon">🔬</div>
+                            <div class="display-name">ABX Micros 60</div>
+                        </div>
+                    </div>
+                    <div class="automate-info">
+                        <h4>ABX Micros 60 / ES 60</h4>
+                        <p>Analyseurs compacts pour hématologie de routine.</p>
+                        <div class="automate-specs">
+                            <span>Compact</span>
+                            <span>Facile d'utilisation</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Section Expérience -->
+    <!-- Experience Section -->
     <section class="experience">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">04</span>
-                <h2>Parcours <span class="highlight">Professionnel</span></h2>
+        <div class="section-container">
+            <div class="section-header" data-reveal>
+                <span class="section-number">04</span>
+                <h2 class="section-title">Parcours <span class="gradient-text">Professionnel</span></h2>
                 <div class="section-line"></div>
             </div>
+
             <div class="timeline">
-                <div class="timeline-item" data-aos="fade-right">
+                <div class="timeline-line"></div>
+
+                <div class="timeline-item" data-reveal>
                     <div class="timeline-dot">
                         <div class="dot-pulse"></div>
                     </div>
                     <div class="timeline-content">
-                        <div class="timeline-date">2023 - Aujourd'hui</div>
+                        <div class="timeline-date">2023 — Aujourd'hui</div>
                         <h3>Responsable Technique Hématologie</h3>
                         <span class="company">Bioplus Tunisie</span>
                         <ul>
@@ -341,10 +569,11 @@
                         </ul>
                     </div>
                 </div>
-                <div class="timeline-item" data-aos="fade-left">
+
+                <div class="timeline-item" data-reveal>
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="timeline-date">2020 - 2022</div>
+                        <div class="timeline-date">2020 — 2022</div>
                         <h3>Technicien SAV Hématologie</h3>
                         <span class="company">Bioplus Tunisie</span>
                         <ul>
@@ -354,10 +583,11 @@
                         </ul>
                     </div>
                 </div>
-                <div class="timeline-item" data-aos="fade-right">
+
+                <div class="timeline-item" data-reveal>
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="timeline-date">2016 - 2020</div>
+                        <div class="timeline-date">2016 — 2020</div>
                         <h3>Conseiller Commercial</h3>
                         <span class="company">Franchise Ooredoo</span>
                         <ul>
@@ -370,84 +600,135 @@
         </div>
     </section>
 
-    <!-- Section Contact -->
+    <!-- Contact Section -->
     <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">05</span>
-                <h2>Contactez-<span class="highlight">moi</span></h2>
+        <div class="section-container">
+            <div class="section-header" data-reveal>
+                <span class="section-number">05</span>
+                <h2 class="section-title">Contactez-<span class="gradient-text">moi</span></h2>
                 <div class="section-line"></div>
             </div>
+
             <div class="contact-grid">
-                <div class="contact-info">
+                <div class="contact-info" data-reveal>
                     <div class="contact-card">
-                        <div class="contact-icon">📍</div>
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                        </div>
                         <h4>Localisation</h4>
-                        <p>Jedaïda, Tunisie</p>
+                        <p>16 Rue Salaheddine Ayoubi, Tunis</p>
                     </div>
+
                     <div class="contact-card">
-                        <div class="contact-icon">📞</div>
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                        </div>
                         <h4>Téléphone</h4>
                         <p>+216 22 700 017</p>
                     </div>
+
                     <div class="contact-card">
-                        <div class="contact-icon">✉️</div>
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                        </div>
                         <h4>Email</h4>
                         <p>m.dababi@hotmail.com</p>
                     </div>
+
                     <div class="contact-card">
-                        <div class="contact-icon">💼</div>
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                <rect x="2" y="9" width="4" height="12"/>
+                                <circle cx="4" cy="4" r="2"/>
+                            </svg>
+                        </div>
                         <h4>LinkedIn</h4>
                         <p>Mustapha Dababi</p>
                     </div>
                 </div>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <input type="text" placeholder="Votre Nom" required>
-                        <div class="input-border"></div>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Votre Email" required>
-                        <div class="input-border"></div>
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder="Votre Message" rows="5" required></textarea>
-                        <div class="input-border"></div>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-full">
-                        <span>Envoyer le message</span>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
-                        </svg>
-                    </button>
-                </form>
+
+                <div class="contact-form-wrapper" data-reveal>
+                    <form class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" placeholder="Votre Nom" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" placeholder="Votre Email" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Sujet">
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Votre Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary btn-full">
+                            <span class="btn-text">Envoyer le message</span>
+                            <span class="btn-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="22" y1="2" x2="11" y2="13"/>
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                                </svg>
+                            </span>
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logos">
-                <div class="footer-logo-item">
-                    <span class="logo-medical">HORIBA</span>
-                    <span class="logo-medical-sub">Medical</span>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logos">
+                        <div class="footer-logo-item">
+                            <span class="partner-name">HORIBA</span>
+                            <span class="partner-sub">Medical</span>
+                        </div>
+                        <div class="footer-logo-item">
+                            <span class="partner-name">BIOPUS</span>
+                            <span class="partner-sub">Diagnostics</span>
+                        </div>
+                    </div>
+                    <p class="footer-tagline">Support Technique Hématologie</p>
                 </div>
-                <div class="footer-logo-item">
-                    <span class="logo-bioplus">BIOPUS</span>
-                    <span class="logo-bioplus-sub">DIAGNOSTICS</span>
+                <div class="footer-links-group">
+                    <h5>Navigation</h5>
+                    <a href="#accueil">Accueil</a>
+                    <a href="#apropos">Profil</a>
+                    <a href="#expertise">Expertise</a>
+                    <a href="#automates">Automates</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-links-group">
+                    <h5>Automates</h5>
+                    <a href="#automates">Yumizen H500/H550</a>
+                    <a href="#automates">ABX Pentra XL 80</a>
+                    <a href="#automates">ABX Pentra XLR</a>
+                    <a href="#automates">Yumizen H2500</a>
+                </div>
+                <div class="footer-links-group">
+                    <h5>Contact</h5>
+                    <a href="tel:+21622700017">+216 22 700 017</a>
+                    <a href="mailto:m.dababi@hotmail.com">m.dababi@hotmail.com</a>
+                    <a href="#">Tunis, Tunisie</a>
                 </div>
             </div>
-            <div class="footer-logo">Mustapha Dababi</div>
-            <p>Support Technique Hématologie - Bioplus/Horiba</p>
-            <div class="footer-links">
-                <a href="#accueil">Accueil</a>
-                <a href="#apropos">Profil</a>
-                <a href="#expertise">Expertise</a>
-                <a href="#automates">Automates</a>
-                <a href="#contact">Contact</a>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mustapha Dababi — Bioplus Tunisie. Tous droits réservés.</p>
             </div>
-            <p class="copyright">&copy; 2026 Mustapha Dababi - Bioplus Tunisie. Tous droits réservés.</p>
         </div>
     </footer>
 
