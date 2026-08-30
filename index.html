@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mustapha Dababi - Technicien Biomédical Expert</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Particles Background -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Cursor Trail -->
+    <div class="cursor-trail" id="cursorTrail"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <span class="logo-icon">⚕️</span>
+            <span class="logo-text">M<span class="logo-highlight">D</span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#accueil" class="nav-link">Accueil</a></li>
+            <li><a href="#apropos" class="nav-link">Profil</a></li>
+            <li><a href="#expertise" class="nav-link">Expertise</a></li>
+            <li><a href="#automates" class="nav-link">Automates</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Section Accueil -->
+    <section id="accueil" class="hero">
+        <div class="hero-bg">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+            <div class="grid-overlay"></div>
+        </div>
+        <div class="hero-logos">
+            <div class="partner-logo">
+                <span class="logo-medical">HORIBA</span>
+                <span class="logo-medical-sub">Medical</span>
+            </div>
+            <div class="partner-logo">
+                <span class="logo-bioplus">BIOPUS</span>
+                <span class="logo-bioplus-sub">DIAGNOSTICS</span>
+            </div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="pulse"></span>
+                Support Technique Expert
+            </div>
+            <h1 class="hero-title">
+                <span class="line line-1">Mustapha</span>
+                <span class="line line-2">DABABI</span>
+            </h1>
+            <div class="hero-subtitle">
+                <span class="typewriter" id="typewriter"></span>
+                <span class="cursor">|</span>
+            </div>
+            <div class="hero-stats">
+                <div class="stat" data-target="200">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">Automates</span>
+                </div>
+                <div class="stat" data-target="6">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">Années Exp.</span>
+                </div>
+                <div class="stat" data-target="100">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">% Fiabilité</span>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">
+                    <span>Contactez-moi</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="#expertise" class="btn btn-secondary">
+                    <span>Découvrir</span>
+                </a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="image-wrapper">
+                <div class="image-placeholder pro-photo">
+                    <span>👨‍⚕️</span>
+                    <p>Mustapha Dababi</p>
+                    <p class="photo-subtitle">Support Technique Bioplus/Horiba</p>
+                </div>
+                <div class="image-ring ring-1"></div>
+                <div class="image-ring ring-2"></div>
+                <div class="image-ring ring-3"></div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll</span>
+        </div>
+    </section>
+
+    <!-- Section À propos -->
+    <section id="apropos" class="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">01</span>
+                <h2>Profil <span class="highlight">Expert</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-card main-card">
+                    <div class="card-glow"></div>
+                    <h3>Technicien Biomédical Expert</h3>
+                    <p class="lead">Spécialisé en automates d'hématologie HORIBA avec 6 années d'expérience dans le service après-vente d'équipements médicaux.</p>
+                    <div class="tags">
+                        <span class="tag">HORIBA</span>
+                        <span class="tag">Hématologie</span>
+                        <span class="tag">SAV</span>
+                        <span class="tag">Diagnostic</span>
+                    </div>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">🎯</div>
+                    <h4>Mission</h4>
+                    <p>Assurer la performance et la fiabilité des automates d'hématologie pour un diagnostic médical précis.</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">⚡</div>
+                    <h4>Approche</h4>
+                    <p>Réactivité, diagnostic avancé et qualité de service au cœur de chaque intervention.</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">🏆</div>
+                    <h4>Résultat</h4>
+                    <p>Parc de 200+ automates opérationnels, zéro downtime critique.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Expertise -->
+    <section id="expertise" class="expertise">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">02</span>
+                <h2>Domaines d'<span class="highlight">Expertise</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="expertise-grid">
+                <div class="expertise-card" data-tilt>
+                    <div class="card-bg"></div>
+                    <div class="card-content">
+                        <div class="card-icon-large">🔧</div>
+                        <h3>Maintenance</h3>
+                        <p>Maintenance préventive et corrective des automates HORIBA PXL80, PXL80, H250 et HELO.</p>
+                        <div class="card-stats">
+                            <span>200+ automates</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="expertise-card" data-tilt>
+                    <div class="card-bg"></div>
+                    <div class="card-content">
+                        <div class="card-icon-large">⚙️</div>
+                        <h3>Installation</h3>
+                        <p>Installation, mise en service et configuration des équipements d'hématologie.</p>
+                        <div class="card-stats">
+                            <span>Déploiement complet</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="expertise-card" data-tilt>
+                    <div class="card-bg"></div>
+                    <div class="card-content">
+                        <div class="card-icon-large">🔍</div>
+                        <h3>Diagnostic</h3>
+                        <p>Analyse avancée des pannes matérielles, logicielles et réseau.</p>
+                        <div class="card-stats">
+                            <span>Résolution rapide</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="expertise-card" data-tilt>
+                    <div class="card-bg"></div>
+                    <div class="card-content">
+                        <div class="card-icon-large">👥</div>
+                        <h3>Management</h3>
+                        <p>Management d'équipe technique et formation des utilisateurs.</p>
+                        <div class="card-stats">
+                            <span>Leadership prouvé</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="expertise-card" data-tilt>
+                    <div class="card-bg"></div>
+                    <div class="card-content">
+                        <div class="card-icon-large">🌐</div>
+                        <h3>Réseaux</h3>
+                        <p>TCP/IP, VPN IPSec, routeurs Cisco et protocoles de communication.</p>
+                        <div class="card-stats">
+                            <span>Infrastructure complète</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="expertise-card" data-tilt>
+                    <div class="card-bg"></div>
+                    <div class="card-content">
+                        <div class="card-icon-large">💻</div>
+                        <h3>Informatique</h3>
+                        <p>Windows, outils bureautiques, diagnostic réseau et connectivité.</p>
+                        <div class="card-stats">
+                            <span>Solutions IT</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Automates -->
+    <section id="automates" class="automates">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">03</span>
+                <h2>Automates <span class="highlight">HORIBA Medical</span></h2>
+                <div class="section-line"></div>
+                <p class="section-subtitle">Performance • Fiabilité • Innovation</p>
+            </div>
+            <div class="automates-showcase">
+                <div class="automate-card featured">
+                    <div class="automate-badge">NOUVEAU</div>
+                    <div class="automate-image">
+                        <div class="image-placeholder automate-placeholder">
+                            <span>🔬</span>
+                            <p class="automate-name">Yumizen 2.0</p>
+                            <p class="automate-desc">Nouvelle Génération</p>
+                        </div>
+                    </div>
+                    <div class="automate-info">
+                        <h3>Yumizen 2.0</h3>
+                        <p>Analyse hématologique automatisée de nouvelle génération. L'excellence au service de votre laboratoire.</p>
+                        <div class="automate-specs">
+                            <span>100 échantillons/heure</span>
+                            <span>Interface tactile</span>
+                            <span>Grande autonomie</span>
+                        </div>
+                        <div class="automate-features">
+                            <div class="feature">✓ Haute Performance</div>
+                            <div class="feature">✓ Précision Optimale</div>
+                            <div class="feature">✓ Fiabilité Totale</div>
+                            <div class="feature">✓ Connectivité Avancée</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="automate-card">
+                    <div class="automate-image">
+                        <div class="image-placeholder automate-placeholder">
+                            <span>🔬</span>
+                            <p class="automate-name">PXL80</p>
+                        </div>
+                    </div>
+                    <div class="automate-info">
+                        <h3>PXL80</h3>
+                        <p>Analyseur d'hématologie complet pour le diagnostic sanguin.</p>
+                        <div class="automate-specs">
+                            <span>80 échantillons/heure</span>
+                            <span>24 paramètres</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="automate-card">
+                    <div class="automate-image">
+                        <div class="image-placeholder automate-placeholder">
+                            <span>🔬</span>
+                            <p class="automate-name">H250</p>
+                        </div>
+                    </div>
+                    <div class="automate-info">
+                        <h3>H250</h3>
+                        <p>Analyseur haute performance pour laboratoires centraux.</p>
+                        <div class="automate-specs">
+                            <span>250 échantillons/heure</span>
+                            <span>30 paramètres</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="automate-card">
+                    <div class="automate-image">
+                        <div class="image-placeholder automate-placeholder">
+                            <span>🔬</span>
+                            <p class="automate-name">HELO</p>
+                        </div>
+                    </div>
+                    <div class="automate-info">
+                        <h3>HELO</h3>
+                        <p>Solution intégrée pour l'analyse hématologique avancée.</p>
+                        <div class="automate-specs">
+                            <span>Analyse complète</span>
+                            <span>Technologie de pointe</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Expérience -->
+    <section class="experience">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">04</span>
+                <h2>Parcours <span class="highlight">Professionnel</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-dot">
+                        <div class="dot-pulse"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2023 - Aujourd'hui</div>
+                        <h3>Responsable Technique Hématologie</h3>
+                        <span class="company">Bioplus Tunisie</span>
+                        <ul>
+                            <li>Management de l'équipe technique Hématologie</li>
+                            <li>Suivi technique de 200+ automates HORIBA</li>
+                            <li>Planification et priorisation des interventions</li>
+                            <li>Diagnostic avancé des pannes</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2020 - 2022</div>
+                        <h3>Technicien SAV Hématologie</h3>
+                        <span class="company">Bioplus Tunisie</span>
+                        <ul>
+                            <li>Installation et maintenance préventive/corrective</li>
+                            <li>Dépannage électronique et logiciel</li>
+                            <li>Contrôle qualité et performances</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2016 - 2020</div>
+                        <h3>Conseiller Commercial</h3>
+                        <span class="company">Franchise Ooredoo</span>
+                        <ul>
+                            <li>Conseil client et vente</li>
+                            <li>Fidélisation et gestion réclamations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">05</span>
+                <h2>Contactez-<span class="highlight">moi</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">📍</div>
+                        <h4>Localisation</h4>
+                        <p>Jedaïda, Tunisie</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">📞</div>
+                        <h4>Téléphone</h4>
+                        <p>+216 22 700 017</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">✉️</div>
+                        <h4>Email</h4>
+                        <p>m.dababi@hotmail.com</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">💼</div>
+                        <h4>LinkedIn</h4>
+                        <p>Mustapha Dababi</p>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Votre Nom" required>
+                        <div class="input-border"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Votre Email" required>
+                        <div class="input-border"></div>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Votre Message" rows="5" required></textarea>
+                        <div class="input-border"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <span>Envoyer le message</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logos">
+                <div class="footer-logo-item">
+                    <span class="logo-medical">HORIBA</span>
+                    <span class="logo-medical-sub">Medical</span>
+                </div>
+                <div class="footer-logo-item">
+                    <span class="logo-bioplus">BIOPUS</span>
+                    <span class="logo-bioplus-sub">DIAGNOSTICS</span>
+                </div>
+            </div>
+            <div class="footer-logo">Mustapha Dababi</div>
+            <p>Support Technique Hématologie - Bioplus/Horiba</p>
+            <div class="footer-links">
+                <a href="#accueil">Accueil</a>
+                <a href="#apropos">Profil</a>
+                <a href="#expertise">Expertise</a>
+                <a href="#automates">Automates</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <p class="copyright">&copy; 2026 Mustapha Dababi - Bioplus Tunisie. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
