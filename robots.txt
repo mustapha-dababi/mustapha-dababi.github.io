@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mustapha-dababi.github.io/sitemap.xml
