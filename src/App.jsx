@@ -118,6 +118,37 @@ function Hero() {
             <a href="#contact" className="btn btn-secondary">Contact</a>
           </div>
         </div>
+        <div className="hero__visual animate-on-scroll">
+          <div className="hero__image-frame">
+            <img src="/images/mustapha-portrait.png" alt="Mustapha Dababi — Responsable Technique Hématologie" />
+            <div className="hero__image-label">Bioplus Diagnostics · HORIBA Medical</div>
+          </div>
+          <div className="hero__floating-card hero__floating-card--1">
+            <span className="hero__floating-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M10 2L18 6V10C18 14.4 14.4 18 10 19C5.6 18 2 14.4 2 10V6L10 2Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
+                <path d="M7 10L9.5 12.5L14 7.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </span>
+            <div>
+              <strong>Parc 200+</strong>
+              <span>HORIBA</span>
+            </div>
+          </div>
+          <div className="hero__floating-card hero__floating-card--2">
+            <span className="hero__floating-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <circle cx="9" cy="9" r="5" stroke="currentColor" strokeWidth="1.5"/>
+                <path d="M13 13L18 18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                <path d="M7 9L8.5 10.5L12 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </span>
+            <div>
+              <strong>Diagnostic</strong>
+              <span>terrain</span>
+            </div>
+          </div>
+        </div>
       </div>
       <div className="hero__scroll">
         <span>Défiler</span>
@@ -217,6 +248,7 @@ function Technologies() {
       subtitle: 'Middleware & validation experte',
       description: 'Centralisation, validation et traçabilité des résultats d\'hématologie. Interface entre automates, LIS et système qualité.',
       tags: ['Validation', 'LIS', 'Traçabilité'],
+      image: '/images/yumizen-2.0.gif',
       featured: true,
     },
     {
@@ -224,42 +256,49 @@ function Technologies() {
       subtitle: '120/h · 55 paramètres',
       description: 'CBC-DIFF NRBC/h, validation experte multi-sites (ISLH), 5/4 réactifs embarqués, mélange rotatif 360°.',
       tags: ['120/h', '55 paramètres', 'ISLH'],
+      image: '/images/automates/yumizen-h2500-h1500.png',
     },
     {
       name: 'Yumizen H550 / H500 & ESR',
       subtitle: '6-Diff compact · 40/h',
       description: 'Autonomie 1h, chargement continu, mélange auto, ID positive, mode STAT, 3 réactifs, ASTM/HL7.',
       tags: ['6-Diff', '40/h', 'ASTM/HL7'],
+      image: '/images/automates/yumizen-h550-h500-esr.png',
     },
     {
       name: 'Yumizen H500 CRP',
       subtitle: '6 Diff · CRP intégrée',
       description: 'CRP intégrée pour orientation rapide. Solution rentable petite/moyenne taille, compact et convivial.',
       tags: ['CRP', 'Compact', '6 Diff'],
+      image: '/images/automates/yumizen-h500-crp.png',
     },
     {
       name: 'Yumizen H500 & H550',
       subtitle: 'Petite/moyenne taille',
       description: 'Systèmes compacts, manipulation facile, tests sûrs. Idéal laboratoires satellites, urgences, cabinets.',
       tags: ['Compact', '6 Diff', 'Satellites'],
+      image: '/images/automates/yumizen-h500-h550.png',
     },
     {
       name: 'Pentra 80 Range',
       subtitle: 'XL80 / XLR · 80/h',
       description: '80/h en 60s, loader 100 échantillons. NFS 5 parties + cellules immatures. XLR : 36+10 paramètres.',
       tags: ['80/h', 'Loader 100', 'Fluorescence'],
+      image: '/images/automates/pentra-80-range.png',
     },
     {
       name: 'Pentra 60 Range',
       subtitle: '60 C+ · 60/h',
       description: 'Solution intermédiaire robuste et fiable pour laboratoires régionaux. Gestion sûre des échantillons.',
       tags: ['60/h', 'Régional', 'Robuste'],
+      image: '/images/automates/pentra-60-range.png',
     },
     {
       name: 'Micros Range',
       subtitle: '60 / ES60 / ESV60 · 10 µL',
       description: 'Micro-échantillonnage 10 µL, impédance + photométrie, carte à puce, moteur pas à pas.',
       tags: ['10 µL', 'Impédance', 'Photométrie'],
+      image: '/images/automates/micros-range.png',
     },
   ]
 
@@ -282,6 +321,11 @@ function Technologies() {
               style={{ transitionDelay: `${i * 40}ms` }}
             >
               {product.featured && <span className="tech__badge">Featured — Middleware</span>}
+              {product.image && (
+                <div className="tech__card-image">
+                  <img src={product.image} alt={product.name} loading="lazy" />
+                </div>
+              )}
               <div className="tech__card-header">
                 <h3 className="tech__card-title">{product.name}</h3>
                 <p className="tech__card-subtitle">{product.subtitle}</p>
